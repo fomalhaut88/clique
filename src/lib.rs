@@ -27,6 +27,11 @@ pub fn solve_clique_wrap(size: u32, graph: &[u32; 100000000], clique: &mut [u32;
 
 
 pub fn solve_clique(graph: &Vec<Edge>) -> HashSet<u32> {
+    // Empty clique for empty graph
+    if graph.len() == 0 {
+        return HashSet::new();
+    }
+
     // Calculating how many edges each vertex has
     let stat = {
         let mut stat = HashMap::new();
