@@ -6,7 +6,7 @@ pub struct Edge(pub u32, pub u32);
 
 
 #[no_mangle]
-pub fn solve_clique_wrap(size: u32, graph: &[u32; 1000000], clique: &mut [u32; 1000]) -> u32 {
+pub fn solve_clique_wrap(size: u32, graph: &[u32; 100000000], clique: &mut [u32; 10000]) -> u32 {
     // Building graph as Vec<Edge>
     let mut graph_vec: Vec<Edge> = Vec::new();
     for i in (0..size).step_by(2) {
