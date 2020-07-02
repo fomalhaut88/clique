@@ -148,22 +148,4 @@ mod tests {
 
         assert_eq!(clique, correct_clique);
     }
-
-    #[test]
-    fn test_solve_clique_wrap() {
-        let graph_arr = [0, 3, 0, 4, 0, 7, 1, 2, 1, 4, 1, 5, 1, 7, 2, 3, 2, 8,
-                         3, 5, 3, 8, 4, 5, 4, 6, 4, 7, 4, 8, 5, 7, 6, 7, 7, 8];
-
-        let mut clique_arr: [u32; 9] = [0; 9];
-
-        let clique_size = solve_clique_wrap(graph_arr.len() as u32, &graph_arr, &mut clique_arr);
-
-        let clique_vec = clique_arr[0..clique_size as usize].to_vec();
-
-        assert_eq!(clique_size, 4);
-        assert!(clique_vec.contains(&1));
-        assert!(clique_vec.contains(&4));
-        assert!(clique_vec.contains(&5));
-        assert!(clique_vec.contains(&7));
-    }
 }
